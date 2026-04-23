@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Dancing+Script:wght@400;700&family=Homemade+Apple&family=Special+Elite&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-hand: "Dancing Script", cursive;
+  --font-typewriter: "Special Elite", monospace;
+  --font-script: "Homemade Apple", cursive;
+
+  --color-parchment-light: #f4ecd8;
+  --color-parchment-dark: #d4c4a8;
+  --color-ink-faded: #2c2420;
+  --color-sepia: #704214;
+  --color-gold: #d4af37;
+  --color-espresso: #2c2420;
+  --color-wax-red: #8b0000;
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--color-espresso)] text-[var(--color-ink-faded)] font-serif overflow-hidden select-none m-0 p-0;
+    height: 100vh;
+    height: 100svh;
+    background-image: radial-gradient(var(--color-sepia) 0.5px, transparent 0.5px);
+    background-size: 10px 10px;
+  }
+
+  /* Custom Scrollbar (though we don't plan to scroll) */
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+}
+
+@layer utilities {
+  .noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 50;
+    opacity: 0.035;
+    background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+  }
+
+  .vignette {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 40;
+    background: radial-gradient(circle at center, transparent 20%, rgba(0, 0, 0, 0.45) 100%);
+  }
+
+  .paper-curl {
+    box-shadow: 
+      0 1px 1px rgba(0,0,0,0.1), 
+      0 10px 0 -5px #eee, 
+      0 10px 1px -4px rgba(0,0,0,0.1), 
+      0 20px 0 -10px #eee, 
+      0 20px 1px -9px rgba(0,0,0,0.1);
+  }
+
+  .ink-texture {
+    filter: url(#ink-bleed);
+  }
+
+  .ink-shadow {
+    text-shadow: 0.5px 0.5px 1px rgba(44, 36, 32, 0.4), -0.2px -0.2px 0.5px rgba(0, 0, 0, 0.1);
+  }
+
+  .writing-rhythm {
+    line-height: 1.6;
+    letter-spacing: -0.015em;
+  }
+
+  .text-grain {
+    position: relative;
+  }
+
+  .text-grain::after {
+    content: "";
+    position: absolute;
+    inset: -5px;
+    pointer-events: none;
+    opacity: 0.12;
+    mix-blend-mode: multiply;
+    background-image: url("https://www.transparenttextures.com/patterns/old-map.png");
+    z-index: 10;
+  }
+
+  /* Specific refinement for ink-on-paper look */
+  .writing-rhythm {
+    line-height: 1.6;
+    letter-spacing: -0.015em;
+    position: relative;
+  }
+
+  .writing-rhythm::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+    opacity: 0.05;
+    mix-blend-mode: darken;
+    z-index: 5;
+  }
+
+  .ink-press-area {
+    position: relative;
+  }
+
+  .ink-press-area::after {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    pointer-events: none;
+    background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+    opacity: 0.06;
+    mix-blend-mode: multiply;
+    z-index: 10;
+  }
+
+  .script-glow {
+    text-shadow: 0 0 15px rgba(112, 66, 20, 0.1);
+  }
+
+  .old-film-flicker {
+    animation: flicker 0.15s infinite;
+  }
+
+  @keyframes flicker {
+    0% { opacity: 0.97; }
+    5% { opacity: 0.95; }
+    10% { opacity: 0.9; }
+    15% { opacity: 0.98; }
+    20% { opacity: 0.94; }
+    25% { opacity: 0.96; }
+    30% { opacity: 0.92; }
+    35% { opacity: 0.99; }
+    40% { opacity: 0.95; }
+    45% { opacity: 0.9; }
+    50% { opacity: 0.97; }
+    55% { opacity: 0.94; }
+    60% { opacity: 0.98; }
+    65% { opacity: 0.96; }
+    70% { opacity: 0.92; }
+    75% { opacity: 0.99; }
+    80% { opacity: 0.95; }
+    85% { opacity: 0.9; }
+    90% { opacity: 0.98; }
+    95% { opacity: 0.94; }
+    100% { opacity: 0.97; }
+  }
+}
