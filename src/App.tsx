@@ -206,7 +206,7 @@ export default function App() {
               {/* Letter Heading Meta */}
               <div className="absolute top-4 left-0 w-full text-center sm:top-10">
                  <p className="font-typewriter text-[8px] sm:text-[10px] uppercase tracking-[0.5em] text-sepia/40">
-                  EST. 1967 • INTIMATE RECORDS
+                  I Lovee you goluu moluuu
                 </p>
               </div>
 
@@ -231,7 +231,7 @@ export default function App() {
 
                 <div className="pt-4 sm:pt-8 flex flex-col items-center gap-4 sm:gap-6">
                   <p className="text-base sm:text-xl text-sepia/80 tracking-wide max-w-xs sm:max-w-md mx-auto leading-relaxed font-script opacity-80">
-                    To warm a lonely night, <br className="sm:hidden" /> I pray you&rsquo;ll let me love you.
+                    I&rsquo;m Sorry for what i did today, <br className="sm:hidden" /> I hope you will forgive me and please let me love you.
                   </p>
                   
                   <div className="flex items-center gap-4 mt-2 sm:mt-6">
